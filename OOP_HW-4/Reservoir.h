@@ -17,18 +17,18 @@ public:
 		setNameReservoir(name);
 		number_of_reservoirs++;
 	};
-	Reservoir(typeReservoirs typeReservoir, const char* name = "NONAME")
+	Reservoir(typeReservoirs typeReservoir, const char* name = "NONAME"):typeReservoir(typeReservoir)
 	{
-		this->typeReservoir = typeReservoir;
 		number_of_reservoirs++;
 		setNameReservoir(name);
 	};
-	Reservoir(size_t width, size_t length, size_t maximumDepth, typeReservoirs typeReservoir, const char* name = "NONAME")
+	Reservoir(size_t width, size_t length, size_t maximumDepth, typeReservoirs typeReservoir, const char* name = "NONAME"):
+	width(width),
+	length(length),
+	maximumDepth(maximumDepth),
+	typeReservoir(typeReservoir)
 	{
-		this->width = width;
-		this->length = length;
-		this->maximumDepth = maximumDepth;
-		this->typeReservoir = typeReservoir;
+		
 		number_of_reservoirs++;
 		setNameReservoir(name);
 	};
@@ -78,5 +78,10 @@ public:
 	static bool belonging_to_one_type(Reservoir left, Reservoir right);
 	static int areaComparison(Reservoir left, Reservoir right);
 	static Reservoir largestReservoir(Reservoir* arr, size_t sizeArr, typeReservoirs typeReservoir);
+	~Reservoir()
+	{
+		delete[]name;
+		name = nullptr;
+	}
 };
 
