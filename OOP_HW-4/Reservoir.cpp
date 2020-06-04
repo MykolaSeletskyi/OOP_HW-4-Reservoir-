@@ -17,12 +17,12 @@ size_t Reservoir::getNumber_of_reservoirs()
 {
 	return number_of_reservoirs;
 }
-bool Reservoir::belonging_to_one_type(Reservoir left, Reservoir right)
+bool Reservoir::belonging_to_one_type(Reservoir &left, Reservoir &right)
 {
 	return (left.typeReservoir==right.typeReservoir);
 }
 
-int Reservoir::areaComparison(Reservoir left, Reservoir right)
+int Reservoir::areaComparison(Reservoir &left, Reservoir &right)
 {
 	return (left.waterSurfaceArea() > right.waterSurfaceArea()?1: (left.waterSurfaceArea() < right.waterSurfaceArea()?-1:0));
 }

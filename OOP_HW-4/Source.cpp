@@ -13,14 +13,15 @@ int main() {
 	cout<<Reservoir::belonging_to_one_type(c, a)<<endl;
 
 	//left>right=1, left==righ=0, left<right=-1
-	cout<<Reservoir::areaComparison(a, c)<<endl;//порівняня площ 
+	cout << Reservoir::areaComparison(a, c)<<endl;//порівняня площ 
 
 	Reservoir x[4] = {a,b,c,d};
+
 	//метод знаходження у масиві водойм найбільшої за площею  водойми вказаного типу
 	//повертає обєкт класу Reservoir
 	cout << Reservoir::largestReservoir(x, 4, Reservoir::typeReservoirs::PUDDLE).getLength() << endl;
 
 	//кількість водойм (статичне поле)
-	cout<< Reservoir::getNumber_of_reservoirs()<< endl;//кількість водойм
+	cout << "count reservoir = " << Reservoir::getNumber_of_reservoirs()<< endl;//кількість водойм
 	return 0;
 }
